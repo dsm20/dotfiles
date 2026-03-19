@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors
+*.swp
+*.swo
+*.orig
+.idea/
+.vscode/
+*.iml
+
+# Logs & temp
+*.log
+*.tmp
