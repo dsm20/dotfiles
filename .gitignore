@@ -1,1 +1,7 @@
+# Auto-managed / sensitive
+gcloud/
+iterm2/
+gh/hosts.yml
+
+# macOS
 .DS_Store
