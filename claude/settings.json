@@ -1,6 +1,11 @@
 {
   "permissions": {
     "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
       "Bash(go build:*)",
       "Bash(go test:*)",
       "Bash(go env:*)",
@@ -10,11 +15,16 @@
       "Bash(git diff:*)",
       "Bash(git log:*)",
       "Bash(git branch:*)",
+      "Bash(git show:*)",
+      "Bash(git rev-parse:*)",
       "Bash(gh pr checks:*)",
       "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
       "Bash(gh api:*)",
       "Bash(gh run view:*)",
       "Bash(gh run list:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh issue list:*)",
       "Bash(make lint:*)",
       "Bash(make test:*)",
       "Bash(ls:*)",
@@ -22,13 +32,33 @@
       "Bash(pwd:*)",
       "Bash(echo:*)",
       "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
       "Bash(grep:*)",
       "Bash(find:*)",
       "Bash(cat:*)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(env:*)",
+      "Bash(date:*)",
+      "Bash(npm list:*)",
+      "Bash(node --version:*)",
+      "Bash(npm --version:*)"
     ]
   },
-  "model": "opus[1m]",
+  "model": "claude-opus-4-6[1m]",
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Glass.aiff",
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
@@ -39,6 +69,8 @@
     "superpowers@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
-    "context7@claude-plugins-official": false
-  }
+    "context7@claude-plugins-official": false,
+    "security-guidance@claude-plugins-official": true
+  },
+  "effortLevel": "high"
 }
